@@ -13,7 +13,7 @@ resource "aws_appautoscaling_target" "ecs_asg" {
 resource "aws_appautoscaling_policy" "ecs_policy" {
   name               = "${var.project_name}-${var.environment}-cluster/${var.project_name}-${var.environment}-policy"
   policy_type        = "TargetTrackingScaling"
-  resource_id        = "service/${var.project_name}-${var.environment}-cluster/${var.project_name}-${var.environment}-cluster/${var.project_name}-${var.environment}-cluster/${var.project_name}-${var.environment}-service"
+  resource_id        = "service/${var.project_name}-${var.environment}-cluster/${var.project_name}-${var.environment}-service"
   scalable_dimension = "ecs:service:DesiredCount"
   service_namespace  = "ecs"
   
